@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내 버킷리스트 카드</title>
+    <style>
+        /* 기본 카드 디자인 (자유롭게 수정 가능) */
+        .card {
+            width: 300px;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%);
+            padding: 15px 15px 35px 15px;
+            border-radius: 2px 2px 15px 5px;
+            box-shadow: 3px 5px 15px rgba(0,0,0,0.15);
+            /* 배지의 기준점이 되기 위한 필수 속성 */
+            position: relative; 
+        }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+        .card h2 { color: #2c3e50; font-size: 1.5rem; margin-bottom: 10px; }
+        .card p { color: #444; font-size: 1.1rem; line-height: 1.5; }
+
+        /* 1. 배지 (absolute) 관련 CSS를 작성하세요 */
+   
+       .badge {
+    position: absolute;
+    top: -10px;  
+    right: -10px; 
+
+    font-size: 1.5rem;
+    background: #6c5ce7;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+}
+
+        /* 2. 비밀 메모 (visibility) 및 hover 효과 관련 CSS를 작성하세요 */
+
+.secret {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    right: 15px;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #333;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card:hover .secret {
+    visibility: visible;
+    opacity: 1;
+}
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">🏗️🪂</div>
+        
+        <img src="https://res.klook.com/image/upload/w_500,h_313,c_fill,q_85/activities/ojvjcqvmnvu6spoofpr8.jpg" alt="번지점프">
+        
+        <h2>✨ 오현서의 여름계획!</h2>
+        <p>🌊 1. 친구들과 여행가기</p>
+        <p>💻 2. 번지점프하기</p>
+
+        <div class="secret">번지점프는 여행중에 진행할 벌칙</div>
+    </div>
+</body>
