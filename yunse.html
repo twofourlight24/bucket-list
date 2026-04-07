@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>내 버킷리스트 카드</title>
+    <style>
+        .card {
+            width: 300px;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #CFC4F0 0%, #FCD1DA 100%);
+            padding: 15px 15px 100px 15px;
+            border-radius: 2px 2px 15px 5px;
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+            /* 배지의 기준점이 되기 위한 필수 속성 */
+            position: relative;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #444;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        /* 1. 배지 (absolute) 관련 CSS를 작성하세요 */
+        .badge {
+            position: absolute;
+            top: -15px;
+            right: -30px;
+
+            font-size: 0.8rem;
+            background: #6c5ce7;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+            transform: rotate(20deg);
+        }
+
+        /* 2. 비밀 메모 (visibility) 및 hover 효과 관련 CSS를 작성하세요 */
+        .secret {
+            position: absolute;
+            padding:10px 20px 0px 5px;
+            text-align: left;
+            font-size: 0.9rem;
+            color: rgba(0,0,0,0.8);
+
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .card:hover .secret{
+            visibility: visible;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="badge">Let's GO!🔥</div>
+
+        <img src="image/gamer.png"
+            alt="게이머 이미지">
+
+        <h2>✨ 이윤세의 꿈</h2>
+        <p>💻 1. 경력 쌓고 프로그래머로 취직하기</p>
+        <p>🎮 2. 발로란트 불멸 찍기</p>
+
+        <div class="secret"> <hr style="border: none; border-top: 2px dotted;">TMI : 사실 이전에 게임 공모전 수상 경력이 있음</div>
+    </div>
+</body>
+
+</html>
