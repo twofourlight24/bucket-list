@@ -27,18 +27,19 @@
         }
         h1 { color: #333; font-size: 2.8rem; margin-bottom: 10px; }
         .clearfix::after { content: ""; display: block; clear: both; }
-        .gallery-container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .gallery-container { width: 90%; max-width: 1400px; margin: 0 auto; }
         
         /* 공통 카드 스타일 */
         .card {
-            float: left; width: 31.33%; margin: 1%;
+            float: left; width: 30%; margin: 1.5% 3%;
             background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%);
             padding: 15px 15px 35px 15px;
             border-radius: 2px 2px 15px 5px;
             box-shadow: 3px 5px 15px rgba(0,0,0,0.15);
-            position: relative; /* 자식인 badge의 기준점 */
+            position: relative;
             transform: rotate(-3deg);
             transition: transform 0.3s ease, z-index 0s;
+            margin-bottom: 30px;
         }
         .card:hover {
             transform: scale(1.05) rotate(0deg);
@@ -47,6 +48,23 @@
         .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
         .card h2 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 10px; }
         .card p { color: #444; font-size: 1.3rem; text-align: left; line-height: 1.5; }
+        
+        /* 배지 스타일 */
+        .badge {
+            position: absolute;
+            z-index: 10;
+        }   
+        
+        /* 숨겨진 메모 스타일 */
+        .hidden-memo {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .card:hover .hidden-memo {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -55,8 +73,65 @@
         <p style="font-size: 1.5rem; color: #555;">우리 조의 꿈들을 코르크 보드에 붙였습니다!</p>
     </header>
     <main class="gallery-container clearfix">
-        <!-- 팀원들의 코드가 들어갈 자리입니다 -->
+        <!-- 심규찬의 꿈 -->
+        <div class="card">
+            <img src="https://cdn.interfootball.co.kr/news/photo/201609/134151_151631_2234.jpeg" alt="축구장">
+            <h2>✨ 심규찬의 꿈</h2>
+            <p>⚽ 1. 안필드에서 리버풀 경기 직관</p>
+            <p>👍 2. 하고 싶은 일 찾기</p>
+            <div class="hidden-memo">🤫 TMI: 유럽 한 번도 안 가봄</div>
+        </div>
 
+        <!-- 배형석의 꿈 -->
+        <div class="card">
+            <div class="badge" style="top: -10px; right: -10px; background-color: #ff4757; color: white; padding: 8px 12px; border-radius: 20px; font-weight: bold; font-size: 1rem; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); transform: rotate(10deg);">D-30</div>
+            <img src="image/work.png" alt="개발자">
+            <h2>✨ 배형석의 꿈</h2>
+            <p>1. 해외 여행가기</p>
+            <p>2. 첫 웹사이트 만들어보기</p>
+            <p>3. 친구들 사귀기</p>
+            <div class="hidden-memo" style="margin-top: 15px; padding: 10px; background-color: rgba(255, 255, 255, 0.6); border-left: 4px solid #7FFFD4; font-size: 0.9rem; color: #7f8c8d;"># 아직 여권 갱신도 안함</div>
+        </div>
+
+        <!-- 우준혁의 꿈 -->
+        <div class="card">
+            <div class="badge" style="left: -20px; top: 0px; background: #000000; color: #ffffff; border-radius: 20px; font-size: 18px; padding: 5px;">workout</div>
+            <img src="image/workout.jpg" alt="운동사진">
+            <h2>✨ 우준혁의 꿈</h2>
+            <p>1. 운동 꾸준히 하기</p>
+            <p>2. 살 빼기</p>
+            <div class="hidden-memo" style="position: relative; bottom: 15px; top: 20px; left: 70px;">아직 운동 시작도 안함</div>
+        </div>
+
+        <!-- 오현서의 여름계획 -->
+        <div class="card">
+            <div class="badge" style="top: -10px; right: -10px; font-size: 1.5rem; background: #6c5ce7; color: white; padding: 5px 10px; border-radius: 20px; box-shadow: 2px 4px 10px rgba(0,0,0,0.2);">🏗️🪂</div>
+            <img src="https://res.klook.com/image/upload/w_500,h_313,c_fill,q_85/activities/ojvjcqvmnvu6spoofpr8.jpg" alt="번지점프">
+            <h2>✨ 오현서의 여름계획!</h2>
+            <p>🌊 1. 친구들과 여행가기</p>
+            <p>💻 2. 번지점프하기</p>
+            <div class="hidden-memo" style="position: absolute; bottom: 10px; left: 15px; right: 15px; background: #ffffff; padding: 8px; border-radius: 5px; font-size: 0.9rem; color: #333;">번지점프는 여행중에 진행할 벌칙</div>
+        </div>
+
+        <!-- 이윤세의 꿈 -->
+        <div class="card">
+            <div class="badge" style="top: -15px; right: -30px; font-size: 0.8rem; background: #6c5ce7; color: white; padding: 5px 10px; border-radius: 20px; box-shadow: 2px 4px 10px rgba(0,0,0,0.2); transform: rotate(20deg);">Let's GO!🔥</div>
+            <img src="image/gamer.png" alt="게이머 이미지">
+            <h2>✨ 이윤세의 꿈</h2>
+            <p>💻 1. 경력 쌓고 프로그래머로 취직하기</p>
+            <p>🎮 2. 발로란트 불멸 찍기</p>
+            <div class="hidden-memo" style="position: absolute; padding:10px 20px 0px 5px; text-align: left; font-size: 0.9rem; color: rgba(0,0,0,0.8);"><hr style="border: none; border-top: 2px dotted;">TMI : 사실 이전에 게임 공모전 수상 경력이 있음</div>
+        </div>
+        
+        <!-- 민준의 꿈 -->
+        <div class="card">
+            <div class="badge" style="position: absolute; top: -10px; right: -30px; background-color: rgba(255, 0, 0, 0.8); color: white; padding: 5px 10px; border-radius: 50px; font-size: 0.9rem; box-shadow: 0 2px 5px rgb(255, 0, 0); transform: rotate(10deg);">💎money is power💎</div>
+            <img src="https://img.danawa.com/images/descFiles/4/484/3483359_1509793770916.gif" alt="돈 다발">
+            <h2>✨ 민준의 꿈</h2>
+            <p>💰 1. 과한건 아니여도 어느정도 원하는걸 살수 있을 정도</p>
+            <p>🪙 2. 통장에 1억 지니고 있기</p>
+            <div class="hidden-memo" style="position: absolute; bottom: 10px; left: 45px; background-color: rgba(47, 150, 37, 0.9); padding: 5px 10px; border-radius: 50px; font-size: 0.9rem; color: white;">💡 TMI: 내 계좌엔 2026원이 있다.</div>
+        </div>
     </main>
 </body>
 </html>
